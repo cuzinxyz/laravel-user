@@ -16,7 +16,7 @@ class LoginController extends Controller
     public function auth(Request $request)
     {
         if(Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-            return redirect('/');
+            return redirect('/admin');
         } else {
             $request->session()->flash('error', 'Sai tài khoản hoặc mật khẩu!');
             return redirect('/login');

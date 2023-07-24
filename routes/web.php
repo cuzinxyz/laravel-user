@@ -4,9 +4,13 @@ use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth', 'check.role'])->group(function () {
-    Route::get('/', function () {
+    Route::get('/admin', function () {
         return view('welcome');
     });
+});
+
+Route::get('/', function () {
+    return view('welcome');
 });
 
 Route::controller(LoginController::class)->group(function () {
